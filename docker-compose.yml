@@ -1,0 +1,21 @@
+version: '3'
+services:
+  vault:
+    image: "vault:1.1.1"
+    ports:
+      - "8200:8200"
+    # Allow memory locking
+    cap_add:
+      - IPC_LOCK
+    # Mount simple Vault server config using the file storage backend
+    volumes:
+      - ./vault-config.json:/vault/config/config.json:rw
+    environment:
+      - VAULT_DEV_ROOT_TOKEN_ID=$VAULT_TOKEN
+  database:
+    image: "postgres:9.6.12"
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
