@@ -25,7 +25,6 @@ database write access to a service and another one called `dev-read` that would 
 
 Each role has a different TTL which is the length of the credentials.
 
-
 ## Usage
 
 ### Generating Vault server root token
@@ -59,7 +58,6 @@ VAULT_ADDR=http://0.0.0.0:8200
 ```
 
 Then just run `docker-compose up` - this will start up both the Postgres and Vault server containers.
-
 
 ### Generating credentials
 
@@ -155,9 +153,7 @@ Plan: 4 to add, 0 to change, 0 to destroy.
 If the `terraform plan` output looks similar to the above one then run `terraform apply` to create the 
 resources.
 
-
 #### Trying it out
-
 
 After applying the changes, we should be able to use vault CLI to interact with our newly created database 
 secret backend:
@@ -230,7 +226,6 @@ SELECT * FROM test_table;
 
 INSERT INTO test_table VALUES (2, 'Lettuce', 2.92);
 > ERROR:  permission denied for relation test_table
-
 ```
 
 #### Cleaning up credentials
