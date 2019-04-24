@@ -1,4 +1,7 @@
-provider "vault" {} // Ensure VAULT_ADDR and VAULT_TOKEN env vars are set
+// Ensure VAULT_ADDR and VAULT_TOKEN env vars are set
+provider "vault" {
+  version = "1.7.0"
+}
 
 resource "vault_mount" "database" {
   path                      = "database"
@@ -17,7 +20,7 @@ resource "vault_database_secret_backend_connection" "postgres" {
 
   postgresql {
     // sslmode=disable needed for the Postgres Go Client
-    connection_url = "postgres://${var.postgres_db_user}:${var.postgres_db_password}@${var.postgres_db_endpoint}/${var.postgres_db}?sslmode=disable"
+    connection_url = "postgres://${var.db_user}:${var.db_password}@${var.db_endpoint}/${var.db}?sslmode=disable"
   }
 }
 
