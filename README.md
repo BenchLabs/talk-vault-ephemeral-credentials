@@ -217,6 +217,8 @@ DB_USER_WRITE=(paste the username here)
 LEASE_ID_WRITE=(paste the lease_id here)
 ```
 
+_* Note:_ You could also append `-format=json` to the vault command and then parse the fields easily using `jq`
+
 Then use the returned credentials to login into your local Postgres database and make some changes. Use the
  password from the vault command above when prompted.
 
@@ -323,7 +325,7 @@ users and using shared roles instead. Further reading [here](https://www.postgre
 
 ```bash
 terraform destroy
-docker-compose rm
+docker-compose down
 ```
 
 If there are any leases pending, Vault will try to revoke them first so keep in mind the Postgres object 
