@@ -14,8 +14,8 @@ ones:
 
 - docker-compose `1.23.2`  with Compose [file format version](https://github.com/docker/compose/releases) 
 `3.7` support or greater
-- terraform version `0.11.13`
-- vault client/server version `1.1.1`
+- terraform version `0.12.7`
+- vault client/server version `1.2.2`
 
 ## Abstract
 
