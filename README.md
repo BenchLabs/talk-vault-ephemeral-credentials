@@ -279,7 +279,7 @@ We can use `vault lease revoke` to send an asynchronous revocation request befor
 example, let's revoke the dev-read credential:
 
 ```bash
-vault lease "${LEASE_ID_READ}"
+vault lease revoke ${LEASE_ID_READ}"
 All revocation operations queued successfully!
 ```
 
