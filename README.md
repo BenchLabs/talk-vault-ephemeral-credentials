@@ -95,8 +95,7 @@ Run:
 terraform init
 ```
 
-Then, ensure `VAULT_TOKEN` and `VAULT_ADDR` are set, this is to ensure the [Vault Terraform Provider]
-(https://www.terraform.io/docs/providers/vault/index.html)
+Then, ensure `VAULT_TOKEN` and `VAULT_ADDR` are set, this is to ensure the [Vault Terraform Provider](https://www.terraform.io/docs/providers/vault/index.html)
 is able to interact with your vault server running on `docker-compose`
 
  ```bash
